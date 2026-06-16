@@ -128,7 +128,7 @@ export default function JourneyPage() {
           Your journey began on {new Date().toLocaleDateString()}. Since then, you've shown a steady commitment 
           to improving your environmental footprint. Sustainability is a marathon, not a sprint—every green checkmark counts!
         </p>
-      </div>
+      </Card>
     </div>
   );
 }
