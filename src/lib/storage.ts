@@ -2,9 +2,9 @@
 'use client';
 
 export const STORAGE_KEYS = {
-  ASSESSMENT: 'greenpath_assessment',
-  GOALS: 'greenpath_goals',
-  RESULTS: 'greenpath_results',
+  REFLECTION: 'earthwise_reflection',
+  PLEDGES: 'earthwise_pledges',
+  JOURNEY: 'earthwise_journey',
 };
 
 export function saveToLocal<T>(key: string, data: T): void {

@@ -4,162 +4,124 @@ import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { 
-  Car, 
-  Zap, 
+  Leaf, 
+  Wind, 
+  Sun, 
   Droplets, 
-  Trash2, 
-  LineChart, 
-  Trophy, 
   ArrowRight,
   ShieldCheck,
-  BrainCircuit
+  Globe
 } from 'lucide-react';
-import { PlaceHolderImages } from '@/lib/placeholder-images';
 
 export default function Home() {
-  const heroImage = PlaceHolderImages.find(img => img.id === 'hero-green');
-
   return (
-    <div className="flex flex-col gap-20 pb-20">
+    <div className="flex flex-col gap-24 pb-20">
       {/* Hero Section */}
-      <section className="relative h-[80vh] flex items-center overflow-hidden">
+      <section className="relative h-[90vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src={heroImage?.imageUrl || "https://picsum.photos/seed/green1/1200/600"}
-            alt="Sustainability hero"
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?q=80&w=2560&auto=format&fit=crop"
+            alt="Beautiful forest morning"
             fill
-            className="object-cover brightness-50"
-            data-ai-hint="forest sustainability"
+            className="object-cover brightness-[0.45]"
+            priority
           />
         </div>
         <div className="container mx-auto px-4 relative z-10 text-white">
-          <div className="max-w-2xl space-y-6">
-            <h1 className="font-headline text-5xl md:text-7xl font-extrabold tracking-tight">
-              Small Steps, <br />
-              <span className="text-accent">Big Change.</span>
+          <div className="max-w-3xl space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-1000">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-sm font-medium">
+              <Leaf className="w-4 h-4 text-emerald-400" />
+              EarthWise Journey
+            </div>
+            <h1 className="font-headline text-6xl md:text-8xl font-bold tracking-tight leading-[1.1]">
+              Transform everyday <br />
+              <span className="text-emerald-400 italic">choices</span> into a greener future.
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 font-medium">
-              Join the movement towards a sustainable future. Track your impact, set eco-friendly goals, and receive AI-powered guidance to reduce your carbon footprint.
+            <p className="text-xl md:text-2xl text-white/80 font-medium max-w-xl">
+              Discover how your daily habits affect the environment and embark on a personalized path toward sustainable living.
             </p>
-            <div className="flex flex-wrap gap-4 pt-4">
-              <Button size="lg" className="bg-primary hover:bg-primary/90 text-white h-14 px-8 rounded-full text-lg shadow-xl" asChild>
-                <Link href="/assessment">
-                  Assess Your Impact <ArrowRight className="ml-2 h-5 w-5" />
+            <div className="flex flex-wrap gap-4 pt-6">
+              <Button size="lg" className="bg-emerald-600 hover:bg-emerald-700 text-white h-16 px-10 rounded-full text-xl shadow-2xl transition-all hover:scale-105" asChild>
+                <Link href="/reflection">
+                  Start My Green Journey <ArrowRight className="ml-2 h-6 w-6" />
                 </Link>
               </Button>
-              <Button size="lg" variant="outline" className="bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 h-14 px-8 rounded-full text-lg" asChild>
-                <Link href="/about">Learn More</Link>
+              <Button size="lg" variant="outline" className="bg-white/5 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 h-16 px-10 rounded-full text-xl" asChild>
+                <Link href="/about">Our Mission</Link>
               </Button>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Features Grid */}
+      {/* Philosophy Section */}
       <section className="container mx-auto px-4">
-        <div className="text-center mb-16 space-y-4">
-          <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Core Modules</h2>
-          <p className="text-muted-foreground max-w-xl mx-auto">
-            Everything you need to become an eco-champion, powered by modern tech and environmental science.
-          </p>
-        </div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {[
-            {
-              title: "Smart Assessment",
-              desc: "Interactive evaluation of your habits across transport, energy, water, and waste.",
-              icon: BrainCircuit,
-              color: "bg-emerald-100 text-emerald-700"
-            },
-            {
-              title: "Impact Dashboard",
-              desc: "Real-time visualization of your footprint data and progress over time.",
-              icon: LineChart,
-              color: "bg-blue-100 text-blue-700"
-            },
-            {
-              title: "Eco-Goal Manager",
-              desc: "Personalized task tracking to help you build sustainable habits week by week.",
-              icon: Trophy,
-              color: "bg-amber-100 text-amber-700"
-            }
-          ].map((feature, i) => (
-            <Card key={i} className="border-none shadow-md animate-gentle-scale hover:shadow-xl transition-all">
-              <CardContent className="pt-8 text-center space-y-4">
-                <div className={`w-16 h-16 rounded-2xl ${feature.color} flex items-center justify-center mx-auto mb-4`}>
-                  <feature.icon className="w-8 h-8" />
+        <div className="max-w-4xl mx-auto text-center space-y-12">
+          <div className="space-y-4">
+            <h2 className="text-4xl font-bold text-primary">Every Action Ripples</h2>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              We believe sustainability isn't about perfection; it's about progress. 
+              Small, consistent changes in our daily routines collectively heal our planet.
+            </p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              { title: "Awareness", desc: "Reflect on your current lifestyle impact.", icon: Globe },
+              { title: "Personalization", desc: "Receive custom steps for your level.", icon: ShieldCheck },
+              { title: "Commitment", desc: "Pledge to make lasting changes.", icon: HeartIcon }
+            ].map((p, i) => (
+              <div key={i} className="p-8 rounded-3xl bg-white shadow-sm border border-border/50 text-center space-y-4">
+                <div className="w-12 h-12 rounded-full bg-primary/10 text-primary flex items-center justify-center mx-auto">
+                  <p.icon className="w-6 h-6" />
                 </div>
-                <h3 className="font-headline text-xl font-bold">{feature.title}</h3>
-                <p className="text-muted-foreground">{feature.desc}</p>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-      </section>
-
-      {/* Impact Areas */}
-      <section className="bg-white py-24">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8">
-              <div className="space-y-4">
-                <h2 className="font-headline text-3xl md:text-4xl font-bold text-primary">Your Daily Impact Matters</h2>
-                <p className="text-muted-foreground text-lg">
-                  We break down your carbon footprint into four key categories that represent the majority of personal environmental impact.
-                </p>
+                <h3 className="font-bold text-lg">{p.title}</h3>
+                <p className="text-muted-foreground text-sm">{p.desc}</p>
               </div>
-              
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                {[
-                  { name: "Transportation", icon: Car, info: "Commutes & travel" },
-                  { name: "Energy", icon: Zap, info: "Home power & heating" },
-                  { name: "Water", icon: Droplets, info: "Usage & conservation" },
-                  { name: "Waste", icon: Trash2, info: "Recycling & disposal" }
-                ].map((area, i) => (
-                  <div key={i} className="flex items-start gap-4 p-4 rounded-xl border border-border/50 hover:bg-background transition-colors">
-                    <div className="p-3 rounded-lg bg-primary/10 text-primary">
-                      <area.icon className="w-6 h-6" />
-                    </div>
-                    <div>
-                      <h4 className="font-bold">{area.name}</h4>
-                      <p className="text-sm text-muted-foreground">{area.info}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            <div className="relative aspect-square rounded-3xl overflow-hidden shadow-2xl">
-              <Image 
-                src="https://picsum.photos/seed/sustain2/800/800" 
-                alt="Eco-friendly living" 
-                fill 
-                className="object-cover"
-                data-ai-hint="lifestyle sustainability"
-              />
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* CTA section with Image */}
       <section className="container mx-auto px-4">
-        <div className="bg-primary rounded-3xl p-12 text-center text-white space-y-6 shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-32 h-32 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-2xl"></div>
-          <div className="absolute bottom-0 right-0 w-64 h-64 bg-accent/20 rounded-full translate-x-1/4 translate-y-1/4 blur-3xl"></div>
-          
-          <h2 className="font-headline text-3xl md:text-5xl font-bold relative z-10">Ready to find your Green Path?</h2>
-          <p className="text-white/80 text-lg max-w-2xl mx-auto relative z-10">
-            Start your free assessment today and receive a customized plan to reduce your environmental impact.
-          </p>
-          <div className="pt-4 relative z-10">
-            <Button size="lg" className="bg-white text-primary hover:bg-white/90 h-14 px-10 rounded-full text-lg font-bold" asChild>
-              <Link href="/assessment">Start Now</Link>
+        <div className="relative rounded-[3rem] overflow-hidden bg-primary p-12 md:p-24 text-white shadow-2xl">
+          <Image
+            src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2560&auto=format&fit=crop"
+            alt="Hands holding a sapling"
+            fill
+            className="object-cover opacity-20 pointer-events-none"
+          />
+          <div className="relative z-10 max-w-2xl space-y-6">
+            <h2 className="text-4xl md:text-6xl font-bold">Ready to take the first step?</h2>
+            <p className="text-xl text-white/80">
+              Our 5-minute reflection will help you understand your environmental strengths and areas for growth.
+            </p>
+            <Button size="lg" className="bg-white text-primary hover:bg-white/90 rounded-full h-14 px-8 font-bold text-lg" asChild>
+              <Link href="/reflection">Begin Reflection</Link>
             </Button>
           </div>
         </div>
       </section>
     </div>
+  );
+}
+
+function HeartIcon(props: any) {
+  return (
+    <svg
+      {...props}
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" />
+    </svg>
   );
 }

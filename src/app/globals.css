@@ -5,44 +5,40 @@
 
 @layer base {
   :root {
-    /* Emerald Green (#1B7352) -> HSL 158 62% 28% */
-    --primary: 158 62% 28%;
+    /* Nature-inspired palette */
+    /* Forest Green (#2D5A27) -> HSL 113 39% 25% */
+    --primary: 113 39% 25%;
     --primary-foreground: 0 0% 100%;
     
-    /* Sage Mist (#F1F7F5) -> HSL 160 25% 96% */
-    --background: 160 25% 96%;
-    --foreground: 158 50% 10%;
+    /* Cream Earth (#FAF9F6) -> HSL 40 20% 97% */
+    --background: 40 20% 97%;
+    --foreground: 113 50% 10%;
     
     --card: 0 0% 100%;
-    --card-foreground: 158 50% 10%;
+    --card-foreground: 113 50% 10%;
     
     --popover: 0 0% 100%;
-    --popover-foreground: 158 50% 10%;
+    --popover-foreground: 113 50% 10%;
     
-    --secondary: 158 30% 90%;
-    --secondary-foreground: 158 62% 28%;
+    /* Sage Green (#A3B18A) -> HSL 82 21% 62% */
+    --secondary: 82 21% 85%;
+    --secondary-foreground: 113 39% 25%;
     
-    --muted: 158 10% 90%;
-    --muted-foreground: 158 20% 40%;
+    --muted: 82 10% 90%;
+    --muted-foreground: 113 20% 40%;
     
-    /* Flora Lime (#63B870) -> HSL 129 39% 55% */
-    --accent: 129 39% 55%;
+    /* Earthy Terracotta (#BC6C25) -> HSL 28 67% 44% */
+    --accent: 28 67% 44%;
     --accent-foreground: 0 0% 100%;
     
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
     
-    --border: 158 20% 85%;
-    --input: 158 20% 85%;
-    --ring: 158 62% 28%;
+    --border: 113 20% 85%;
+    --input: 113 20% 85%;
+    --ring: 113 39% 25%;
     
-    --chart-1: 158 62% 28%;
-    --chart-2: 129 39% 55%;
-    --chart-3: 160 25% 45%;
-    --chart-4: 140 40% 65%;
-    --chart-5: 150 50% 35%;
-    
-    --radius: 0.75rem;
+    --radius: 1rem;
   }
 }
 
@@ -51,13 +47,17 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-body;
   }
 }
 
 .animate-gentle-scale {
-  transition: transform 0.2s ease-in-out;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .animate-gentle-scale:hover {
   transform: scale(1.02);
+}
+
+.glass-card {
+  @apply bg-white/70 backdrop-blur-md border border-white/20 shadow-xl;
 }
