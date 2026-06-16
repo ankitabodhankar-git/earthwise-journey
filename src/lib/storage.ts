@@ -4,6 +4,11 @@ export const STORAGE_KEYS = {
   CHOICES: 'earthwise_choices',
   HABITS: 'earthwise_habits',
   SCORE: 'earthwise_score',
+  RESULTS: 'earthwise_results',
+  JOURNEY: 'earthwise_journey',
+  PLEDGES: 'earthwise_pledges',
+  REFLECTION: 'earthwise_reflection',
+  GOALS: 'earthwise_goals',
 };
 
 export function saveToLocal<T>(key: string, data: T): void {
