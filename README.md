@@ -41,3 +41,4 @@ This project is optimized for deployment on **Firebase App Hosting** or **GitHub
 
 ---
 Built as a student-led initiative for the Global Sustainability Challenge.
+
