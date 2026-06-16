@@ -1,0 +1,23 @@
+
+{
+  "placeholderImages": [
+    {
+      "id": "hero-green",
+      "description": "Lush green forest with sunlight filtering through trees",
+      "imageUrl": "https://picsum.photos/seed/green1/1200/600",
+      "imageHint": "forest sustainability"
+    },
+    {
+      "id": "solar-panels",
+      "description": "Modern solar panels on a rooftop",
+      "imageUrl": "https://picsum.photos/seed/energy1/800/400",
+      "imageHint": "solar energy"
+    },
+    {
+      "id": "wind-turbines",
+      "description": "Wind turbines on a green hill",
+      "imageUrl": "https://picsum.photos/seed/wind1/800/400",
+      "imageHint": "renewable energy"
+    }
+  ]
+}
