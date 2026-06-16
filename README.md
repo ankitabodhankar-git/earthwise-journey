@@ -1,44 +1,59 @@
+# EarthWise 🌿
 
-# EarthWise Journey 🌿
+**"Small Habits. Smarter Future."**
 
-**"Transform everyday choices into a greener future."**
-
-EarthWise Journey is a modern, responsive sustainability platform built to help users understand their environmental impact and adopt a greener lifestyle.
+EarthWise is a modern sustainability platform built to help users understand their environmental impact and adopt a greener lifestyle through smart decision-making and habit tracking.
 
 ## ✨ Key Features
 
-- **Lifestyle Reflection:** A 5-step interactive questionnaire covering Travel, Shopping, Water, Energy, and Waste.
-- **Green Lifestyle Profile:** Dynamic categorization (Nature Explorer, Eco Supporter, Sustainability Champion) based on habits.
-- **Smart Action Plan:** Personalized checklist of actionable eco-habits with persistent tracking.
-- **Monthly Impact Journey:** Real-time visual tracking of CO₂ reduction and water savings estimation.
-- **Green Pledge:** Commitment-based tracking for long-term sustainability goals.
-- **Earthy Aesthetic:** Nature-inspired UI with greens, whites, and soft earth tones.
-- **Local Persistence:** All progress is stored in `localStorage` for privacy and persistence without a backend.
+- **Smart Choices:** Interactive decision-making cards (e.g., Bus vs. Bike) to visualize daily impact.
+- **Earth Impact Score:** Real-time scoring system categorizing users as Beginner, Conscious Citizen, or EarthWise Hero.
+- **Impact Dashboard:** A comprehensive summary of active habits and estimated CO₂/Water savings.
+- **Habit Tracker:** A personalized list of sustainable daily wins.
+- **Better Alternatives:** Guidance on swapping standard routines for planet-friendly ones.
+- **Privacy First:** All data is stored locally in your browser using `localStorage`. No backend or account required.
 
 ## 🛠️ Tech Stack
 
 - **Framework:** Next.js 15 (App Router)
 - **Library:** React 19
 - **Styling:** Tailwind CSS
-- **Components:** ShadCN UI (Radix UI)
+- **Components:** ShadCN UI
 - **Icons:** Lucide React
-- **Data:** Client-side Persistence (localStorage)
+- **AI:** Genkit (for personalized recommendations)
 
-## 🚀 Deployment
+## 🚀 How to Push to GitHub
 
-This project is optimized for deployment on **Firebase App Hosting** or **GitHub Pages**.
+Follow these steps to upload your project to a GitHub repository:
 
-1.  **Clone the repository.**
-2.  **Run development server:** `npm run dev`
-3.  **Build project:** `npm run build`
-4.  **Static Export:** The project uses standard Next.js routing and can be exported as a static site if needed by adding `output: 'export'` to `next.config.js`.
+1. **Create a Repository:**
+   - Go to [GitHub](https://github.com/new) and create a new repository (do not initialize with a README if you want to push this existing code).
 
-## 🎨 Design Principles
+2. **Open your Terminal:**
+   - Navigate to your project folder.
 
-- **Mobile First:** Fully responsive design using Tailwind's grid and flexbox.
-- **Accessibility:** Semantic HTML5, ARIA labels, and keyboard-friendly navigation.
-- **Elegance:** Clean layouts, generous spacing, and a modern nature-inspired palette.
+3. **Initialize and Push:**
+   ```bash
+   # Initialize git (if not already done)
+   git init
+
+   # Add all files
+   git add .
+
+   # Commit your changes
+   git commit -m "Initial commit: EarthWise sustainability platform"
+
+   # Link to your GitHub repo (replace <URL> with your repo link)
+   git remote add origin <YOUR_GITHUB_REPO_URL>
+
+   # Push to the main branch
+   git branch -M main
+   git push -u origin main
+   ```
+
+## 🌐 Deployment
+
+This project is ready for deployment on **Firebase App Hosting** or **Vercel**. Since it uses standard Next.js features, it will build and deploy automatically once connected to your GitHub repository.
 
 ---
-Built as a student-led initiative for the Global Sustainability Challenge.
-
+Built for the Global Sustainability Challenge.
