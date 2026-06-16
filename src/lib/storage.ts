@@ -1,10 +1,9 @@
-
 'use client';
 
 export const STORAGE_KEYS = {
-  REFLECTION: 'earthwise_reflection',
-  PLEDGES: 'earthwise_pledges',
-  JOURNEY: 'earthwise_journey',
+  CHOICES: 'earthwise_choices',
+  HABITS: 'earthwise_habits',
+  SCORE: 'earthwise_score',
 };
 
 export function saveToLocal<T>(key: string, data: T): void {

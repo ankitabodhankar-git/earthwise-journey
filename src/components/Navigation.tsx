@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -10,11 +9,9 @@ import { cn } from '@/lib/utils';
 
 const navItems = [
   { name: 'Home', href: '/' },
-  { name: 'Reflection', href: '/reflection' },
-  { name: 'Profile', href: '/profile' },
-  { name: 'Action Plan', href: '/action-plan' },
-  { name: 'Journey', href: '/journey' },
-  { name: 'Pledge', href: '/pledge' },
+  { name: 'Smart Choices', href: '/smart-choices' },
+  { name: 'Habit Tracker', href: '/habit-tracker' },
+  { name: 'Dashboard', href: '/dashboard' },
   { name: 'About', href: '/about' },
 ];
 
@@ -47,7 +44,7 @@ export function Navigation() {
             </Link>
           ))}
           <Button asChild className="bg-primary text-white rounded-full px-6 hover:scale-105 transition-transform">
-            <Link href="/reflection">Get Started</Link>
+            <Link href="/smart-choices">Get Started</Link>
           </Button>
         </div>
 
@@ -77,7 +74,7 @@ export function Navigation() {
             </Link>
           ))}
           <Button asChild className="w-full rounded-full py-6">
-            <Link href="/reflection" onClick={() => setIsOpen(false)}>Begin Journey</Link>
+            <Link href="/smart-choices" onClick={() => setIsOpen(false)}>Start Journey</Link>
           </Button>
         </div>
       )}
