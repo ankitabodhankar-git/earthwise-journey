@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -19,7 +18,15 @@ import {
   CheckCircle2
 } from 'lucide-react';
 
-const SUGGESTED_GOALS = [
+interface Goal {
+  id: string;
+  title: string;
+  category: string;
+  completed: boolean;
+  impact: string;
+}
+
+const SUGGESTED_GOALS: Omit<Goal, 'completed'>[] = [
   { id: 'g1', title: 'Bring a reusable coffee cup', category: 'waste', impact: 'Medium' },
   { id: 'g2', title: 'Switch to a plant-based diet for 1 day', category: 'water', impact: 'High' },
   { id: 'g3', title: 'Unplug devices when not in use', category: 'energy', impact: 'Low' },
@@ -29,17 +36,16 @@ const SUGGESTED_GOALS = [
 ];
 
 export default function GoalsPage() {
-  const [goals, setGoals] = useState<any[]>([]);
+  const [goals, setGoals] = useState<Goal[]>([]);
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
     setMounted(true);
-    const saved = getFromLocal<any[]>(STORAGE_KEYS.GOALS);
+    const saved = getFromLocal<Goal[]>(STORAGE_KEYS.GOALS);
     if (saved) {
       setGoals(saved);
     } else {
-      // Default initial goals
-      const initial = [
+      const initial: Goal[] = [
         { id: 'g1', title: 'Bring a reusable coffee cup', category: 'waste', completed: false, impact: 'Medium' },
         { id: 'g3', title: 'Unplug devices when not in use', category: 'energy', completed: true, impact: 'Low' },
       ];
@@ -54,7 +60,7 @@ export default function GoalsPage() {
     saveToLocal(STORAGE_KEYS.GOALS, updated);
   };
 
-  const addGoal = (suggested: any) => {
+  const addGoal = (suggested: Omit<Goal, 'completed'>) => {
     if (goals.some(g => g.id === suggested.id)) return;
     const updated = [...goals, { ...suggested, completed: false }];
     setGoals(updated);

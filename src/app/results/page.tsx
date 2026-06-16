@@ -46,8 +46,10 @@ export default function ResultsPage() {
   const [results, setResults] = useState<AssessmentResults | null>(null);
   const [recommendations, setRecommendations] = useState<string>('');
   const [loadingAI, setLoadingAI] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
     const data = getFromLocal<AssessmentResults>(STORAGE_KEYS.RESULTS);
     if (!data) {
       router.push('/assessment');
@@ -77,7 +79,7 @@ export default function ResultsPage() {
     }
   };
 
-  if (!results) return null;
+  if (!mounted || !results) return null;
 
   const chartData = [
     { name: 'Transport', score: results.transportationScore, fill: 'hsl(var(--chart-1))' },
