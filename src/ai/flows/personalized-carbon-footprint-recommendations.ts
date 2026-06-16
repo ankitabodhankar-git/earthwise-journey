@@ -16,33 +16,33 @@ const PersonalizedCarbonFootprintRecommendationsInputSchema = z.object({
     .min(0)
     .max(100)
     .describe(
-      'A score (0-100) representing the user\'s carbon footprint in transportation. Lower is better.'
+      "A score (0-100) representing the user's carbon footprint in transportation. Lower is better."
     ),
   energyScore: z
     .number()
     .min(0)
     .max(100)
     .describe(
-      'A score (0-100) representing the user\'s carbon footprint in energy consumption. Lower is better.'
+      "A score (0-100) representing the user's carbon footprint in energy consumption. Lower is better."
     ),
   waterScore: z
     .number()
     .min(0)
     .max(100)
     .describe(
-      'A score (0-100) representing the user\'s carbon footprint in water usage. Lower is better.'
+      "A score (0-100) representing the user's carbon footprint in water usage. Lower is better."
     ),
   wasteScore: z
     .number()
     .min(0)
     .max(100)
     .describe(
-      'A score (0-100) representing the user\'s carbon footprint in waste generation. Lower is better.'
+      "A score (0-100) representing the user's carbon footprint in waste generation. Lower is better."
     ),
   currentEcoLevel: z
     .string()
     .describe(
-      'The user\'s current eco-level (e.g., Eco Beginner, Green Champion).' Proxies the overall score.
+      "The user's current eco-level (e.g., Eco Beginner, Green Champion). Proxies the overall score."
     ),
 });
 export type PersonalizedCarbonFootprintRecommendationsInput = z.infer<

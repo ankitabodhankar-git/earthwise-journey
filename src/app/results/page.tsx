@@ -1,16 +1,14 @@
-
 'use client';
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Link from 'next/link';
 import { getFromLocal, STORAGE_KEYS } from '@/lib/storage';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Progress } from '@/components/ui/progress';
 import { 
   Trophy, 
   Leaf, 
-  Lightbulb, 
   ArrowRight,
   RefreshCcw,
   Sparkles
@@ -27,23 +25,39 @@ import {
 } from 'recharts';
 import { personalizeCarbonFootprintRecommendations } from '@/ai/flows/personalized-carbon-footprint-recommendations';
 
+interface AssessmentResults {
+  transportationScore: number;
+  energyScore: number;
+  waterScore: number;
+  wasteScore: number;
+  overallScore: number;
+  timestamp: string;
+}
+
+const getEcoLevel = (score: number) => {
+  if (score < 25) return 'Green Champion';
+  if (score < 50) return 'Eco Enthusiast';
+  if (score < 75) return 'Sustainable Starter';
+  return 'Eco Beginner';
+};
+
 export default function ResultsPage() {
   const router = useRouter();
-  const [results, setResults] = useState<any>(null);
+  const [results, setResults] = useState<AssessmentResults | null>(null);
   const [recommendations, setRecommendations] = useState<string>('');
   const [loadingAI, setLoadingAI] = useState(false);
 
   useEffect(() => {
-    const data = getFromLocal<any>(STORAGE_KEYS.RESULTS);
+    const data = getFromLocal<AssessmentResults>(STORAGE_KEYS.RESULTS);
     if (!data) {
       router.push('/assessment');
       return;
     }
     setResults(data);
     fetchRecommendations(data);
-  }, []);
+  }, [router]);
 
-  const fetchRecommendations = async (data: any) => {
+  const fetchRecommendations = async (data: AssessmentResults) => {
     setLoadingAI(true);
     try {
       const ecoLevel = getEcoLevel(data.overallScore);
@@ -56,18 +70,11 @@ export default function ResultsPage() {
       });
       setRecommendations(res.recommendations);
     } catch (e) {
-      console.error(e);
+      console.error('AI Flow Error:', e);
       setRecommendations('Could not generate AI recommendations at this time. Focus on reducing transportation miles and energy waste.');
     } finally {
       setLoadingAI(false);
     }
-  };
-
-  const getEcoLevel = (score: number) => {
-    if (score < 25) return 'Green Champion';
-    if (score < 50) return 'Eco Enthusiast';
-    if (score < 75) return 'Sustainable Starter';
-    return 'Eco Beginner';
   };
 
   if (!results) return null;
@@ -136,7 +143,7 @@ export default function ResultsPage() {
                       return (
                         <div className="bg-white p-3 shadow-lg rounded-lg border border-border">
                           <p className="font-bold text-primary">{payload[0].payload.name}</p>
-                          <p className="text-sm">Score: {payload[0].value}</p>
+                          <p className="text-sm">Score: {Math.round(Number(payload[0].value))}</p>
                         </div>
                       );
                     }
@@ -175,7 +182,7 @@ export default function ResultsPage() {
               </div>
             ) : (
               <div className="prose prose-sm max-w-none text-muted-foreground whitespace-pre-line">
-                {recommendations}
+                {recommendations || 'Complete your assessment to see personalized recommendations.'}
               </div>
             )}
           </CardContent>
@@ -217,5 +224,3 @@ export default function ResultsPage() {
     </div>
   );
 }
-
-import Link from 'next/link';
