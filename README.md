@@ -24,25 +24,25 @@ EarthWise is a modern sustainability platform built to help users understand the
 
 ## 🚀 How to Push to GitHub
 
-To upload your project to your repository, run these exact commands in your terminal:
+If you see an error saying `origin` does not exist, run these exact commands in your terminal:
 
 ```bash
-# Initialize git
+# 1. Initialize git (if not already done)
 git init
 
-# Add all project files
+# 2. Add all project files
 git add .
 
-# Commit your changes
+# 3. Commit your changes
 git commit -m "Initial commit: EarthWise sustainability platform"
 
-# Link to your specific GitHub repo
+# 4. Link to your specific GitHub repo (CRITICAL STEP)
 git remote add origin https://github.com/ankitabodhankar-git/earthwise-journey
 
-# Rename branch to main
+# 5. Rename branch to main
 git branch -M main
 
-# Push to GitHub
+# 6. Push to GitHub
 git push -u origin main
 ```
 
