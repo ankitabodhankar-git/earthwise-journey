@@ -21,7 +21,6 @@ export function Footer() {
             <li><Link href="/assessment" className="hover:text-primary">Footprint Assessment</Link></li>
             <li><Link href="/goals" className="hover:text-primary">Eco Goals</Link></li>
             <li><Link href="/about" className="hover:text-primary">About Project</Link></li>
-            <li><Link href="/contact" className="hover:text-primary">Contact Us</Link></li>
           </ul>
         </div>
         <div>
