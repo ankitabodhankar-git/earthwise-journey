@@ -33,7 +33,9 @@ If standard `Ctrl + V` is not working, try these:
 
 ## 🚀 How to Push to GitHub
 
-If you see an error saying `origin` does not exist, follow these steps exactly. **Copy each line one by one and paste them into the terminal.**
+If you see an error saying `remote origin already exists`, run `git remote remove origin` first.
+
+### Step-by-Step Commands:
 
 ```bash
 # 1. Initialize git (if you haven't already)
@@ -45,14 +47,16 @@ git add .
 # 3. Commit your changes
 git commit -m "Initial commit: EarthWise sustainability platform"
 
-# 4. Link to your specific GitHub repo
-# IMPORTANT: If you get an error that 'origin' already exists, run: git remote remove origin
+# 4. FIX: If 'origin' already exists, remove it first
+git remote remove origin
+
+# 5. Link to your specific GitHub repo
 git remote add origin https://github.com/ankitabodhankar-git/earthwise-journey
 
-# 5. Rename branch to main
+# 6. Rename branch to main
 git branch -M main
 
-# 6. Push to GitHub
+# 7. Push to GitHub
 git push -u origin main
 ```
 
