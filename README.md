@@ -4,12 +4,30 @@
 
 EarthWise is a modern sustainability platform built to help users understand their environmental impact and adopt a greener lifestyle through smart decision-making and habit tracking.
 
+---
+
+## 🚀 Exact Commands to Push to GitHub
+
+If you are having trouble with "origin already exists" or "access rights", **copy and paste this entire block of code** into your terminal at once:
+
+```bash
+git init
+git add .
+git commit -m "Initial commit: EarthWise sustainability platform"
+git remote remove origin 2>/dev/null || true
+git remote add origin https://github.com/ankitabodhankar-git/earthwise-journey
+git branch -M main
+git push -f -u origin main
+```
+
+---
+
 ## 📥 How to Download as ZIP
 
 If you want to save a copy of this project to your computer:
 
 1. **Create the ZIP in the Terminal:**
-   Copy and paste this command into the terminal below:
+   Copy and paste this command:
    ```bash
    zip -r earthwise-project.zip . -x "node_modules/*" ".next/*" ".git/*"
    ```
@@ -27,38 +45,8 @@ If standard `Ctrl + V` is not working, try these:
 - **Windows/Linux:** `Ctrl + Shift + V`
 - **Mac:** `Cmd + V`
 - **Universal:** **Right-click** anywhere inside the black terminal area and select **Paste**.
-- **Alternative:** `Shift + Insert`
 
 ---
-
-## 🚀 How to Push to GitHub
-
-If you see an error saying `remote origin already exists`, run `git remote remove origin` first.
-
-### Step-by-Step Commands:
-
-```bash
-# 1. Initialize git (if you haven't already)
-git init
-
-# 2. Add all project files
-git add .
-
-# 3. Commit your changes
-git commit -m "Initial commit: EarthWise sustainability platform"
-
-# 4. FIX: If 'origin' already exists, remove it first
-git remote remove origin
-
-# 5. Link to your specific GitHub repo
-git remote add origin https://github.com/ankitabodhankar-git/earthwise-journey
-
-# 6. Rename branch to main
-git branch -M main
-
-# 7. Push to GitHub
-git push -u origin main
-```
 
 ## ✨ Key Features
 
