@@ -22,6 +22,14 @@ git push -f -u origin main
 
 ---
 
+## 🖥️ HOW TO OPEN THE TERMINAL
+
+1. Look at the **bottom panel** of this window.
+2. Click the tab that says **"Terminal"**.
+3. If you don't see it, look for a small icon representing a command line or terminal at the very bottom edge of the screen.
+
+---
+
 ## 📋 How to Paste into the Terminal
 
 If standard `Ctrl + V` is not working, try these:
