@@ -2,9 +2,16 @@
 
 ### Small Habits. Smarter Future.
 
-EarthWise Journey is an AI-assisted sustainability awareness platform designed to help individuals understand, track, and improve their environmental impact through smart lifestyle choices, personalized recommendations, and habit tracking.
+EarthWise Journey is a sustainability awareness platform designed to help individuals understand, track, and improve their environmental impact through smart lifestyle choices, personalized recommendations, and habit tracking.
 
 Built as part of the Global Sustainability Challenge, the platform encourages users to make eco-friendly decisions and adopt sustainable habits through an interactive and engaging experience.
+
+---
+
+# 🌐 Live Demo
+
+https://earthwise-journey-gyj1.vercel.app/
+
 
 ---
 
@@ -94,8 +101,6 @@ Users can:
 
 # 🎯 Sustainability Levels
 
-Users are categorized based on their overall score.
-
 | Score Range | Level               |
 | ----------- | ------------------- |
 | 0 – 25      | Green Champion      |
@@ -119,8 +124,9 @@ Users are categorized based on their overall score.
 * Shadcn UI
 * Lucide React Icons
 
-## AI Integration
+## AI-Assisted Development
 
+* Firebase Studio
 * Genkit
 * Google Gemini
 
@@ -141,6 +147,7 @@ Users are categorized based on their overall score.
 
 * Vercel
 
+---
 
 # 🔒 Privacy & Data Protection
 
@@ -151,6 +158,27 @@ EarthWise Journey follows a privacy-focused approach.
 * Local Storage used for user progress
 * User data remains on the device
 * No backend database for personal records
+
+---
+
+# 🧪 Testing
+
+Manual testing was performed across desktop and mobile devices.
+
+### Tested Features
+
+* Sustainability Assessment
+* Earth Impact Score Generation
+* Dashboard Navigation
+* Habit Tracking
+* Personalized Recommendations
+* Mobile Responsiveness
+* External Links
+* Local Storage Persistence
+
+### Result
+
+All core features functioned successfully during testing without critical issues.
 
 ---
 
@@ -189,8 +217,6 @@ The goal is to empower individuals to make smarter choices that contribute to a 
 
 **Ankita Bodhankar**
 
-Student Developer | Sustainability Enthusiast
+Student Developer
 
 Built for the Global Sustainability Challenge 2026.
-
-
