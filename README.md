@@ -11,7 +11,7 @@ EarthWise is a modern sustainability platform built to help users understand the
 I have prepared an automated deployment script for you. Since the terminal is in your browser environment, you just need to run this **one command** to perform all the Git operations (Init, Add, Commit, Remote Fix, and Push) automatically.
 
 ### 1. Find the Terminal
-Look at the **very bottom edge** of this window. Click the tab that says **"Terminal"**.
+Look at the **very bottom edge** of this window. Click the tab that says **"Terminal"**. It is located in the panel at the bottom of the workspace, usually next to "Output".
 
 ### 2. Run the Auto-Sync
 Copy and paste this command into the terminal and press **Enter**:
