@@ -140,7 +140,7 @@ Users are categorized based on their overall score.
 ## Deployment
 
 * Vercel
-```
+
 
 # 🔒 Privacy & Data Protection
 
