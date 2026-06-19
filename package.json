@@ -9,7 +9,8 @@
     "build": "NODE_ENV=production next build",
     "start": "next start",
     "lint": "next lint",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "push": "git init && git add . && git commit -m \"Sync EarthWise latest version\" && git remote remove origin 2>/dev/null || true && git remote add origin https://github.com/ankitabodhankar-git/earthwise-journey && git branch -M main && git push -f -u origin main"
   },
   "dependencies": {
     "@genkit-ai/google-genai": "^1.28.0",
